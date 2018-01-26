@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Book and Review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <h1></h1>
+    <h3>Add a New Book Title and a Review</h3>
+    <div class="twoperpage">
+            <form action="/create_trip" method="post">
+                {% csrf_token %} 
+                <label for="name">Destination:</label>
+                <input type="text" class="entry" id="name" name="name">
+                <label for="desc">Description:</label>
+                <input type="text" class="entry" id="desc" name="desc">
+                <label for="planned_by">Planned By:</label>
+                <input type="text" class="entry" id="planned_by" name="planned_by">
+                <input type="hidden" name="user_id" value="{{request.session.user_id}}">
+                <input type="submit" class="button" value="Submit">
+            </form>
+        </div>
+    <div class="twoperpage">
+        <a href="/travels">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+    
+    {% for error in request.session.errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+
+
+    <!-- future enhancements: add directions for entering date to help user -->
+
+</body>
+</html>

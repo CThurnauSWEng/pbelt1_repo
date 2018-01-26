@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travel_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div>
+        <a href="/logout" class="navbar1">Logout</a>
+    </div>
+    <div class="twoperpage">
+        <h3>Hello {{ this_user.name }} {{request.session.user_id}}</h3>
+    </div>
+    
+</body>
+</html>

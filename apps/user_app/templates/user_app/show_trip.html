@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div>
+        <a href="/logout" class="navbar1">Logout</a>
+        <a href="/travels">Home</a>
+
+        <h3>{{ trip.name }}</h3>
+        <h2>Planned By:{{ trip.planned_by }}</h2>
+        <h2>Description: {{ trip.desc }}</h2>
+        <h2>Travel Date From:{{ trip.date_from}}</h2>
+        <h2>Travel Date To: {{ trip.date_to}}</h2>
+    </div>
+</body>
+</html>
